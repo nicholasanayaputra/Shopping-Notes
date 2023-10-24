@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-    <footer className="stats">Ada 10 barang di daftar belanjaan, 5 barang sudah dibeli (50%)</footer>
+    <footer className="stats">There are 10 items on the shopping list, 5 items have already been purchased(50%)</footer>
     </>
   )
 }

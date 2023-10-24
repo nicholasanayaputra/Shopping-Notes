@@ -2,7 +2,7 @@ const Form = () => {
   return (
     <>
          <form className="add-form">
-      <h3>Hari ini belanja apa kita?</h3>
+      <h3>What are we shopping for today??</h3>
       <div>
         <select>
           <option value="1">1</option>
@@ -13,7 +13,7 @@ const Form = () => {
         </select>
         <input type="text" placeholder="nama barang..." />
       </div>
-      <button>Tambah</button>
+      <button>Add</button>
     </form>
     </>
   )

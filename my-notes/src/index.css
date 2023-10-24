@@ -24,14 +24,14 @@ body {
 h1 {
   font-family: "Borel";
   text-align: center;
-  background-color: #283618;
+  background-color: #de8f5f;
   color: white;
   font-size: 6rem;
   padding: 4rem 0 1rem;
 }
 
 .add-form {
-  background-color: #dda15e;
+  background-color: #3876bf;
   padding: 2.8rem 0;
   display: flex;
   flex-direction: column;
@@ -122,11 +122,8 @@ button {
   background-color: red;
   margin-left: 1rem;
 }
-.list ul li .span-1 {
-  text-decoration: line-through;
-}
 .actions {
-  background-color: #606c38;
+  background-color: #3876bf;
   width: 100%;
   padding: 2rem 0;
   text-align: center;
@@ -140,7 +137,7 @@ button {
 }
 
 .stats {
-  background-color: #bc6c25;
+  background-color: #de8f5f;
   color: white;
   text-align: center;
   padding: 3.2rem 0;
