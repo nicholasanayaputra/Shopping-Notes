@@ -1,39 +1,11 @@
-const groceryItems = [
-  {
-    id: 1,
-    name: 'Coffee',
-    quantity: 2,
-    checked: true,
-  },
-  {
-    id: 2,
-    name: 'Sugar',
-    quantity: 5,
-    checked: false,
-  },
-  {
-    id: 3,
-    name: 'Water',
-    quantity: 3,
-    checked: false,
-  },
-];
-
-
-
-const GroceryList = () => {
+const GroceryList = ({items}) => {
   return (
     <>
             <div className="list">
       <ul>
-        {groceryItems.map((item) => (
-        <li key={item.id}>
-        <input type="checkbox" checked="true" />
-        <span style={item.checked ? {textDecoration: 'line-through'} : {}}>{item.quantity} {item.name}</span>
-        <button>&times;</button>
-      </li>
+        {items.map((item) => (
+        <Item item={item} key={item.id}/>
         ))}
-
       </ul>
     </div>
     <div className="actions">
@@ -44,7 +16,17 @@ const GroceryList = () => {
       </select>
       <button>Clean List</button>
     </div>
+
     </>
+  )
+}
+function Item ({item}) {
+  return (
+    <li key={item.id}>
+        <input type="checkbox" checked="true" />
+        <span style={item.checked ? {textDecoration: 'line-through'} : {}}>{item.quantity} {item.name}</span>
+        <button>&times;</button>
+      </li>
   )
 }
 
