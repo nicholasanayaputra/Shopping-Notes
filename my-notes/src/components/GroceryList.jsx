@@ -1,10 +1,10 @@
-const GroceryList = ({items, onDeleteItem}) => {
+const GroceryList = ({items, onDeleteItem, onToggleItem }) => {
   return (
     <>
             <div className="list">
       <ul>
         {items.map((item) => (
-        <Item item={item} key={item.id} onDeleteItem={onDeleteItem}/>
+        <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem}/>
         ))}
       </ul>
     </div>
@@ -20,10 +20,10 @@ const GroceryList = ({items, onDeleteItem}) => {
     </>
   )
 }
-function Item ({item, onDeleteItem}) {
+function Item ({item, onDeleteItem, onToggleItem}) {
   return (
     <li key={item.id}>
-        <input type="checkbox" checked="true" />
+        <input type="checkbox" checked={item.checked} onChange={() => onToggleItem(item.id)} />
         <span style={item.checked ? {textDecoration: 'line-through'} : {}}>{item.quantity} {item.name}</span>
         <button onClick={()=> onDeleteItem(item.id)}>&times;</button>
       </li>
