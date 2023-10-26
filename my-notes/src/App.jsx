@@ -32,11 +32,15 @@ function App() {
     setItems([...items, item]);
   }
 
+  function handleDeleteItem (id) {
+    setItems((items) => items.filter((item) => item.id !== id))
+  }
+
   return (
     <div className="app">
   <Header />
    <Form onAddItem={handleAddItem} />
-  <GroceryList items = {items}/>
+  <GroceryList items = {items} onDeleteItem={handleDeleteItem}/>
     <Footer />
   </div>
   )
