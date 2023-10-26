@@ -1,20 +1,39 @@
-const GroceryList = ({items, onDeleteItem, onToggleItem }) => {
+import { useState } from "react"
+
+const GroceryList = ({items, onDeleteItem, onToggleItem, onClearItems }) => {
+  const [sortBy, setSortBy] = useState('input');
+
+  let sortedItems;
+
+
+  switch(sortBy) {
+    case 'name':
+      sortedItems = items.slice().sort((a, b) => a.name.localeCompare(b.name));
+      break;
+    case 'checked':
+      sortedItems = items.slice().sort((a, b) => a.checked - b.checked );
+      break;
+    default:
+      sortedItems = items;
+      break;
+  }
+
   return (
     <>
             <div className="list">
       <ul>
-        {items.map((item) => (
-        <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem}/>
+        {sortedItems.map((item) => (
+        <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onClearItems={onClearItems}/>
         ))}
       </ul>
     </div>
     <div className="actions">
-      <select>
+      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
         <option value="input">Sort by input order</option>
         <option value="name">Sort by item name</option>
         <option value="checked">Sort by checklist</option>
       </select>
-      <button>Clean List</button>
+      <button onClick={onClearItems}>Clean List</button>
     </div>
 
     </>

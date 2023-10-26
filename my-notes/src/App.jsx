@@ -23,6 +23,12 @@ const groceryItems = [
     quantity: 3,
     checked: false,
   },
+  {
+    id: 4,
+    name: 'Juice',
+    quantity: 6,
+    checked: true,
+  },
 ];
 function App() {
 
@@ -40,11 +46,15 @@ function App() {
     setItems((items) => items.map((item) => item.id === id ? {...item, checked: !item.checked} : item))
   }
 
+  function handleClearItems () {
+    setItems([]);
+  }
+
   return (
     <div className="app">
   <Header />
    <Form onAddItem={handleAddItem} />
-  <GroceryList items = {items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
+  <GroceryList items = {items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems}/>
     <Footer />
   </div>
   )
