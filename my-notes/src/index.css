@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 .app {
-  width: 70%;
+  width: 80%;
   height: 100vh;
   margin: auto;
   display: grid;
@@ -22,16 +22,15 @@ body {
 }
 
 h1 {
-  font-family: "Borel";
   text-align: center;
-  background-color: #de8f5f;
+  background-color: #79ac78;
   color: white;
-  font-size: 6rem;
+  font-size: 7rem;
   padding: 4rem 0 1rem;
 }
 
 .add-form {
-  background-color: #3876bf;
+  background-color: #618264;
   padding: 2.8rem 0;
   display: flex;
   flex-direction: column;
@@ -123,7 +122,7 @@ button {
   margin-left: 1rem;
 }
 .actions {
-  background-color: #3876bf;
+  background-color: #618264;
   width: 100%;
   padding: 2rem 0;
   text-align: center;
@@ -132,16 +131,16 @@ button {
 .actions button,
 .actions select {
   padding: 0.8rem 2.4rem;
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin: 0 0.8rem;
 }
 
 .stats {
-  background-color: #de8f5f;
+  background-color: #79ac78;
   color: white;
   text-align: center;
   padding: 3.2rem 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
